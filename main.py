@@ -3,8 +3,8 @@ from pokemon import Pokemon
 
 def main():
     # instantiate two pokemon, one a charmander, the other a squirtle
-    charmander = Pokemon("Charmander", 50, "fire", "water")
-    squirtle = Pokemon("Squirtle", 40, "water", "lightning")
+    charmander = Pokemon("Charmander", 50, "fire", "water", "no_type")
+    squirtle = Pokemon("Squirtle", 40, "water", "lightning", "no_type")
     
     # pick one at random to start
     first_turn = random.choice(["charmander", "squirtle"])
@@ -26,13 +26,11 @@ def main():
         # ensure that the first attacker has enough hp to attack
         if first.hp > 0:
             first.attack(second)
-            print(f"{first.name} attacks {second.name}!")
             print(f"{second.name} has {second.hp} hp remaining!")
         
         # ensure that the second attacker has enough hp to attack
         if second.hp > 0:
             second.attack(first)
-            print(f"{second.name} attacks {first.name}!")
             print(f"{first.name} has {first.hp} hp remaining!")
             
         # check for any fainters
