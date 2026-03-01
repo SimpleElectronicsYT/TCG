@@ -44,7 +44,7 @@ class Pokemon:
             
     def flip_coin(self):
         return random.choice(["heads", "tails"])
-    
+"""    
 class Charmander(Pokemon):
     def __init__(self, name, hp, type, weakness, resistance):
         super().__init__(name, hp, type, weakness, resistance)
@@ -107,4 +107,4 @@ class Squirtle(Pokemon):
             self.take_no_damage = False
             print(f"Withdraw has no effect!")
         
-        
+        """

@@ -1,6 +1,6 @@
 import random
 import time
-from pokemon import Pokemon, Charmander, Squirtle
+from pokemon import Pokemon
 
 def main():
     # instantiate two pokemon, one a charmander, the other a squirtle
