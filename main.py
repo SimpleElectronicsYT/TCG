@@ -1,11 +1,11 @@
 import random
 import time
-from pokemon import Pokemon
+from pokemon import Pokemon, Charmander, Squirtle
 
 def main():
     # instantiate two pokemon, one a charmander, the other a squirtle
-    charmander = Pokemon("Charmander", 50, "fire", "water", "no_type")
-    squirtle = Pokemon("Squirtle", 40, "water", "lightning", "no_type")
+    charmander = Charmander("Charmander", 50, "fire", "water", "no_type")
+    squirtle = Squirtle("Squirtle", 40, "water", "lightning", "no_type")
     
     # pick one at random to start
     first_turn = random.choice(["charmander", "squirtle"])
