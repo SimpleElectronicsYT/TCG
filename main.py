@@ -1,11 +1,15 @@
 import random
 import time
 from pokemon import Pokemon
+from card_data import all_cards
 
 def main():
-    # instantiate two pokemon, one a charmander, the other a squirtle
-    charmander = Charmander("Charmander", 50, "fire", "water", "no_type")
-    squirtle = Squirtle("Squirtle", 40, "water", "lightning", "no_type")
+    # instantiate the pokemon cards from the 'all cards' module which is a list of card dicts
+    # each object should be called by the id of the card - will have to deal with repeat cards later
+    # for now, the ID will be the object's name
+    for card in all_cards:
+        id = card["id"]
+        id = Pokemon(card)
     
     # pick one at random to start
     first_turn = random.choice(["charmander", "squirtle"])

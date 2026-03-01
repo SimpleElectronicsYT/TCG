@@ -1,17 +1,22 @@
 import random
 
 class Pokemon:
-    def __init__(self, name, hp, type, weakness, resistance):
-        self.name = name
-        self.hp = hp
-        self.type = type
-        self.weakness = weakness
-        self.resistance = resistance
+    def __init__(self, card_data):
+        self.id = card_data["id"]
+        self.name = card_data["name"]
+        self.hp = card_data["hp"]
+        self.type = card_data["type"]
+        self.stage = card_data["stage"]
+        self.weakness = card_data["weakness"]
+        self.resistance = card_data["resistance"]
+        self.retreat = card_data["retreat"]
+        self.evolves_from = card_data["evolves_from"]
+        self.pkmn_power = card_data["pkmn_power"]
+        self.attacks = card_data["attacks"]        
         self.sleep = False
         self.paralyzed = False
         self.poisoned = False
-        self.take_no_damage = False
-        self.moves = []
+        self.protected = False
     
     def attack(self, target):
         target.take_damage(self, 10)
