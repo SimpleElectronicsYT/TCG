@@ -1,5 +1,5 @@
 all_cards = [{
-        "id": "charmander_46",
+        "id": "charmander_bs",
         "name": "Charmander",
         "hp": 50,
         "type": "fire",

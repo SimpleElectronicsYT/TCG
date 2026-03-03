@@ -4,27 +4,39 @@ from pokemon import Pokemon
 from card_data import all_cards
 
 def populate_pokemon():
-    # This function creates a 'Pokemon' object from all the pokemon in 'card_data.py' and stores it in a dict
+    # Creates a 'Pokemon' object from all the pokemon in 'card_data.py' and stores it in a dict
     
     card_dict = {}
     for individual_card in all_cards:
         card_object = individual_card["id"]
         card_object = Pokemon(individual_card)
         card_dict[individual_card["id"]] = card_object
-    
+    return card_dict
         
-    
-    
-    
 
 def main():
+    # Empty list to store the card ID values for randomizer use
+    id_key_list = []
+    # Empty list to store the two pokemon who will fight
+    active_pokemon_list = []
     
-    # card_deck = {}
+    # Start the game by populating the cards into a master dictionary with card_id: card_object pairs
+    card_dict = populate_pokemon()
     
-    # card_deck = populate_pokemon()
+    # Print to the terminal which cards have been successfully loaded and made into objects
+    for card in card_dict:
+        print(f"{card_dict[card].name} ({card}) card has been loaded successfully!")
+        # Make a list of the dictionary keys so that the randomizer can pick two to fight each other
+        id_key_list.append(card)
     
-    populate_pokemon()
+    # Game loop will have to come later - pick two pokemon at random to fight each other
+    active_pokemon_list = random.sample(id_key_list, 2)
     
+    player_one = card_dict[active_pokemon_list[0]]
+    player_two = card_dict[active_pokemon_list[1]]
+    
+    print(player_one)
+    print(player_two)
     """
     # instantiate the pokemon cards from the 'all cards' module which is a list of card dicts
     # each object should be called by the id of the card - will have to deal with repeat cards later

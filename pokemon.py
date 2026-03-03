@@ -18,6 +18,9 @@ class Pokemon:
         self.poisoned = False
         self.protected = False
     
+    def __str__(self):
+        return f"{self.name}, {self.hp}hp remaining"
+        
     def attack(self, target):
         target.take_damage(self, 10)
         
