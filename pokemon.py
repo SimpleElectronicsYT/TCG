@@ -26,12 +26,12 @@ class Pokemon:
     def attack(self, target, index):
         # FUTURE - check if enough energy is attached
         damage = 0
-        print(f"{self.name} uses {self.attacks[index]["name"]}!")
+        print(f"{self.name} uses {self.attacks[index]['name']}!")
         damage = self.attacks[index]["damage"]
         if self.type == target.weakness:
             damage *= 2
             print("It's super effective!")
-        print(f"original damage: {self.attacks[index]["damage"]} total after modifiers: {damage}")
+        print(f"total damage: {damage}")
         
         target.take_damage(self, damage)
             
@@ -43,19 +43,17 @@ class Pokemon:
             damage = max(0, damage - 30)
             print(f"{self.name} resists {attacker.name}'s attack!")
         self.hp -= damage
+        if self.hp < 0:
+            self.hp = 0
         print(f"{self.name} takes {damage} damage!")
         print(f"{self.name} has {self.hp}hp remaining!")
         print("")
-        if self.hp < 0:
-            self.hp = 0
-        self.is_alive()
+        
         
     def flip_coin(self):
         return random.choice(["heads", "tails"])
     
     def is_alive(self):
         if self.hp <= 0:
-            print(f"{self.name} has fainted!")
-            print(f"Good game!")
-            quit()
+            return False
         return True

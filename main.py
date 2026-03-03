@@ -49,9 +49,16 @@ def main():
         time.sleep(5)
         attack = random.randint(0, len(player_one.attacks) -1)
         player_one.attack(player_two, attack)
+        if not player_two.is_alive():
+            print(f"{player_two.name} has fainted!")
+            print(f"Good game!")
+            
         time.sleep(10)
         attack = random.randint(0, len(player_two.attacks) -1)
         player_two.attack(player_one, attack)
+        if not player_one.is_alive():
+            print(f"{player_one.name} has fainted!")
+            print(f"Good game!")
         time.sleep(5)
         
     quit()
