@@ -42,7 +42,7 @@ def main():
     # Tracking the rounds
     round = 0
     
-    while player_one.is_alive and player_two.is_alive():
+    while player_one.is_alive() and player_two.is_alive():
         round += 1
         print(f"Round {round}!")
         print("------------------")
