@@ -38,5 +38,21 @@ all_cards = [{
             "damage": 0,
             "energy_required": ["water","colorless"]
         }]
+    },{
+        "id": "bulbasaur_bs",
+        "name": "Bulbasaur",
+        "hp": 40,
+        "type": "grass",
+        "stage": 1,
+        "weakness": "fire",
+        "resistance": "no_type",
+        "retreat": "colorless",
+        "evolves_from": "none",
+        "pkmn_power": "none",
+        "attacks": [{
+            "name": "Leech Seed",
+            "damage": 20,
+            "energy_required": ["grass","grass"]
+        }]
     }
 ]

@@ -3,7 +3,29 @@ import time
 from pokemon import Pokemon
 from card_data import all_cards
 
+def populate_pokemon():
+    # This function creates a 'Pokemon' object from all the pokemon in 'card_data.py' and stores it in a dict
+    
+    card_dict = {}
+    for individual_card in all_cards:
+        card_object = individual_card["id"]
+        card_object = Pokemon(individual_card)
+        card_dict[individual_card["id"]] = card_object
+    
+        
+    
+    
+    
+
 def main():
+    
+    # card_deck = {}
+    
+    # card_deck = populate_pokemon()
+    
+    populate_pokemon()
+    
+    """
     # instantiate the pokemon cards from the 'all cards' module which is a list of card dicts
     # each object should be called by the id of the card - will have to deal with repeat cards later
     # for now, the ID will be the object's name
@@ -70,7 +92,7 @@ def main():
         time.sleep(5)
         
         round += 1
-        
+        """
     
     quit()
 
