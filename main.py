@@ -8,7 +8,6 @@ def populate_pokemon():
     
     card_dict = {}
     for individual_card in all_cards:
-        card_object = individual_card["id"]
         card_object = Pokemon(individual_card)
         card_dict[individual_card["id"]] = card_object
     return card_dict
@@ -52,13 +51,15 @@ def main():
         if not player_two.is_alive():
             print(f"{player_two.name} has fainted!")
             print(f"Good game!")
+            break
             
-        time.sleep(10)
+        time.sleep(5)
         attack = random.randint(0, len(player_two.attacks) -1)
         player_two.attack(player_one, attack)
         if not player_one.is_alive():
             print(f"{player_one.name} has fainted!")
             print(f"Good game!")
+            break
         time.sleep(5)
         
     quit()
