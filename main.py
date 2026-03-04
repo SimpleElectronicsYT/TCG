@@ -1,5 +1,6 @@
 import random
 import time
+import copy
 from pokemon import Pokemon
 from card_data import all_cards
 
@@ -11,13 +12,24 @@ def populate_pokemon():
         card_object = Pokemon(individual_card)
         card_dict[individual_card["id"]] = card_object
     return card_dict
-        
+
+def user_choice(card_dict, id_key_list):
+    # Lists all potential pokemon to the user and asks the user to pick one
+    print("please choose a Pokémon to fight for you")
+    number = 1
+    for card in card_dict.values():
+        print(f"{number}. {card}")
+        number += 1
+    user_input = int(input("Select your pokémon by typing the number associated with your pokémon choice: "))
+    return card_dict[id_key_list[user_input - 1]]
+
+def cpu_choice(card_dict, id_key_list):
+    random_choice = random.choice(id_key_list)
+    return card_dict[random_choice]
 
 def main():
     # Empty list to store the card ID values for randomizer use
     id_key_list = []
-    # Empty list to store the two pokemon who will fight
-    active_pokemon_list = []
     
     # Start the game by populating the cards into a master dictionary with card_id: card_object pairs
     card_dict = populate_pokemon()
@@ -28,20 +40,27 @@ def main():
         # Make a list of the dictionary keys so that the randomizer can pick two to fight each other
         id_key_list.append(card)
     
-    # Game loop will have to come later - pick two pokemon at random to fight each other
-    active_pokemon_list = random.sample(id_key_list, 2)
+    user = copy.deepcopy(user_choice(card_dict, id_key_list))
+    cpu = copy.deepcopy(cpu_choice(card_dict, id_key_list))
     
-    player_one = card_dict[active_pokemon_list[0]]
-    player_two = card_dict[active_pokemon_list[1]]
+    print(f"You have selected {user}, get ready for battle!")
+    print(f"Your Opponent has selected {cpu}!")
     
-    print(player_one)
+    """# Game loop will have to come later - pick two pokemon at random to fight each other
+    active_pokemon_list = random.sample(id_key_list, 2)"""
+    
+    """player_one = card_dict[active_pokemon_list[0]]
+    player_two = card_dict[active_pokemon_list[1]]"""
+    
+    """print(player_one)
     print(player_two)
     
     print("------------------")
     # Tracking the rounds
-    round = 0
+    round = 0"""
     
-    while player_one.is_alive() and player_two.is_alive():
+    
+    """while player_one.is_alive() and player_two.is_alive():
         round += 1
         print(f"Round {round}!")
         print("------------------")
@@ -60,7 +79,7 @@ def main():
             print(f"{player_one.name} has fainted!")
             print(f"Good game!")
             break
-        time.sleep(5)
+        time.sleep(5)"""
         
     quit()
 

@@ -12,11 +12,13 @@ all_cards = [{
         "attacks": [{
             "name": "Scratch",
             "damage": 10,
-            "energy_required": ["colorless"]
+            "energy_required": ["colorless"],
+            "description": ""
         },{
             "name": "Ember",
             "damage": 30,
-            "energy_required": ["fire","colorless"]
+            "energy_required": ["fire","colorless"],
+            "description": "Discard 1 Fire Energy card attached to Charmander in order to use this attack."
         }]
     },{
         "id": "squirtle_bs",
@@ -32,11 +34,13 @@ all_cards = [{
         "attacks": [{
             "name": "Bubble",
             "damage": 10,
-            "energy_required": ["water"]
+            "energy_required": ["water"],
+            "description": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed"
         },{
             "name": "Withdraw",
             "damage": 0,
-            "energy_required": ["water","colorless"]
+            "energy_required": ["water","colorless"],
+            "description": "Flip a coin. If heads, prevent all damage done to Squirtle during your opponent's next turn. (Any other effects of attacks still happen)"
         }]
     },{
         "id": "bulbasaur_bs",
@@ -52,7 +56,8 @@ all_cards = [{
         "attacks": [{
             "name": "Leech Seed",
             "damage": 20,
-            "energy_required": ["grass","grass"]
+            "energy_required": ["grass","grass"],
+            "description": "Unless all damage from this attack is prevented, you may remove 1 damage counter from Bulbasaur."
         }]
     }
 ]
