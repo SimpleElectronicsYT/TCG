@@ -57,3 +57,14 @@ class Pokemon:
         if self.hp <= 0:
             return False
         return True
+    
+    def list_attacks(self):
+        index = 1
+        print(f"{self.name}'s attacks:")
+        for attack in self.attacks:
+            print(f"{index}:")
+            print(f"{attack['name']}, {attack['damage']} damage")
+            print(attack["energy_required"])
+            print(attack["description"])
+            print("--------------------")
+            index += 1

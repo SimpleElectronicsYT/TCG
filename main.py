@@ -20,6 +20,7 @@ def user_choice(card_dict, id_key_list):
     for card in card_dict.values():
         print(f"{number}. {card}")
         number += 1
+    print("")
     user_input = int(input("Select your pokémon by typing the number associated with your pokémon choice: "))
     return card_dict[id_key_list[user_input - 1]]
 
@@ -42,9 +43,11 @@ def main():
     
     user = copy.deepcopy(user_choice(card_dict, id_key_list))
     cpu = copy.deepcopy(cpu_choice(card_dict, id_key_list))
-    
+    print("")
     print(f"You have selected {user}, get ready for battle!")
     print(f"Your Opponent has selected {cpu}!")
+    print("")
+    user.list_attacks()
     
     """# Game loop will have to come later - pick two pokemon at random to fight each other
     active_pokemon_list = random.sample(id_key_list, 2)"""
