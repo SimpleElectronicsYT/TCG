@@ -63,7 +63,7 @@ class Pokemon:
         print(f"{self.name}'s attacks:")
         for attack in self.attacks:
             print(f"{index}:")
-            print(f"{attack['name']}, {attack['damage']} damage")
+            print(f"{attack['name']} - {attack['damage']} damage")
             print(attack["energy_required"])
             print(attack["description"])
             print("--------------------")

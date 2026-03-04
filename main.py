@@ -47,10 +47,17 @@ def main():
     print(f"You have selected {user}, get ready for battle!")
     print(f"Your Opponent has selected {cpu}!")
     print("")
-    user.list_attacks()
-    
+        
     # Tracking the rounds
     round = 0
+    
+    while user.is_alive() and cpu.is_alive():
+        
+        
+        user.list_attacks()
+    
+    
+
     
     
     """while player_one.is_alive() and player_two.is_alive():
