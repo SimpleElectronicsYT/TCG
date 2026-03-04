@@ -49,18 +49,8 @@ def main():
     print("")
     user.list_attacks()
     
-    """# Game loop will have to come later - pick two pokemon at random to fight each other
-    active_pokemon_list = random.sample(id_key_list, 2)"""
-    
-    """player_one = card_dict[active_pokemon_list[0]]
-    player_two = card_dict[active_pokemon_list[1]]"""
-    
-    """print(player_one)
-    print(player_two)
-    
-    print("------------------")
     # Tracking the rounds
-    round = 0"""
+    round = 0
     
     
     """while player_one.is_alive() and player_two.is_alive():
