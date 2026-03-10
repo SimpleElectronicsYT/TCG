@@ -25,6 +25,12 @@ class Pokemon:
         
     def attack(self, target, index):
         # FUTURE - check if enough energy is attached
+        
+        #Error handling for invalid attack index
+        if index < 0 or index >= len(self.attacks):
+            print("Invalid attack choice! You lose your turn!")
+            return
+        
         damage = 0
         print(f"{self.name} uses {self.attacks[index]['name']}!")
         damage = self.attacks[index]["damage"]
@@ -61,6 +67,7 @@ class Pokemon:
     def list_attacks(self):
         index = 1
         print(f"{self.name}'s attacks:")
+        print("")
         for attack in self.attacks:
             print(f"{index}:")
             print(f"{attack['name']} - {attack['damage']} damage")

@@ -28,6 +28,17 @@ def cpu_choice(card_dict, id_key_list):
     random_choice = random.choice(id_key_list)
     return card_dict[random_choice]
 
+def print_round(round):
+    print(f"Round {round}!")
+    print("------------------")
+    print("")
+    time.sleep(2)
+    
+def print_turn():
+    print("It's your turn!")
+    print("")
+    time.sleep(1)
+
 def main():
     # Empty list to store the card ID values for randomizer use
     id_key_list = []
@@ -53,8 +64,17 @@ def main():
     
     while user.is_alive() and cpu.is_alive():
         
+        #Round handling
+        round += 1
+        print_round(round)
+        print_turn()
         
+        #User turn handling
         user.list_attacks()
+        user_attack = int(input("Select your attack by typing the number associated with your attack choice: "))
+        print("")
+        user.attack(cpu, user_attack - 1)
+        break
     
     
 
