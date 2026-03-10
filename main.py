@@ -74,33 +74,16 @@ def main():
         user_attack = int(input("Select your attack by typing the number associated with your attack choice: "))
         print("")
         user.attack(cpu, user_attack - 1)
-        break
-    
-    
-
-    
-    
-    """while player_one.is_alive() and player_two.is_alive():
-        round += 1
-        print(f"Round {round}!")
-        print("------------------")
-        time.sleep(5)
-        attack = random.randint(0, len(player_one.attacks) -1)
-        player_one.attack(player_two, attack)
-        if not player_two.is_alive():
-            print(f"{player_two.name} has fainted!")
-            print(f"Good game!")
-            break
-            
-        time.sleep(5)
-        attack = random.randint(0, len(player_two.attacks) -1)
-        player_two.attack(player_one, attack)
-        if not player_one.is_alive():
-            print(f"{player_one.name} has fainted!")
-            print(f"Good game!")
-            break
-        time.sleep(5)"""
         
+        
+        #CPU turn handling
+        cpu.list_attacks()
+        cpu_attack = random.randint(1, len(cpu.attacks))
+        time.sleep(5)
+        print(f"Your Opponent chooses: {cpu.attacks[cpu_attack -1]["name"]}!")
+        time.sleep(2)
+        cpu.attack(user, cpu_attack -1)
+    
     quit()
 
 if __name__ == "__main__":
